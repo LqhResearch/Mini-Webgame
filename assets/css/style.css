@@ -1,7 +1,8 @@
 :root {
     --size: 500px;
-    --border-color-2: linear-gradient(45deg, #00131c, #003e61);
-    --border-color-1: linear-gradient(-45deg, #ffef84, #a36f22, #ffef84, #a36f22);
+    --timer: 7s;
+    --border-color-2: linear-gradient(#029454, #029454);
+    --border-color-1: linear-gradient(#fff, #fff);
 }
 
 * {
@@ -10,20 +11,14 @@
     box-sizing: border-box;
 }
 
-html,
 body {
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background: center / cover no-repeat url("../img/wallpaper.jpg");
     font-size: 16px;
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 main {
-    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,8 +32,8 @@ main {
     border-radius: 50%;
     background-image: var(--border-color-2);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .main-wheel::after {
@@ -51,72 +46,72 @@ main {
 }
 
 .icon-arrow {
+    width: 100px;
     position: absolute;
-    width: 50px;
-    top: -10px;
-    z-index: 3;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
+    object-fit: cover;
 }
 
 .wheel {
-    list-style: none;
     position: relative;
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    background-color: #fff;
     z-index: 1;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) var(--timer);
+    list-style: none;
     overflow: hidden;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 7s;
 }
 
-.btn-start {
+.spin-btn {
+    background-color: rgba(214, 28, 78, 0.8);
+    color: #fff;
     padding: 1rem 2rem;
     margin-top: 2rem;
-    border: 2px solid #000;
     font-size: 1.3rem;
+    border: none;
     border-radius: 3rem;
-}
-
-.btn-start:hover {
     cursor: pointer;
-    opacity: 0.8;
 }
 
 li {
-    overflow: hidden;
     position: absolute;
     top: 0;
     right: 0;
     width: 50%;
     height: 50%;
     transform-origin: 0% 100%;
+    overflow: hidden;
 }
 
 .text-item {
-    display: block;
     position: absolute;
     left: -100%;
     height: 200%;
     width: 200%;
-    text-align: center;
     padding-top: 1.7rem;
-    color: rgb(255, 255, 255);
-    background-color: #ccc;
+    text-align: center;
+    display: block;
+    color: #fff;
 }
 
-.text-item.even {
-    background-color: rgb(36, 36, 36);
-}
-
-.text-item>b {
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;
-    word-break: break-word;
-    max-width: 20%;
+.wheel-img {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    z-index: 100;
+    overflow: hidden;
 }
 
 .msg {
     margin-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --size: 350px;
+    }
 }
