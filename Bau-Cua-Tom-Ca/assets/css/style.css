@@ -1,0 +1,123 @@
+:root {
+    --primary: #0096FF;
+    --yellow: #FBDF07;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: center / cover no-repeat url("/assets/img/background.jpg");
+}
+
+main {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.border--yellow {
+    border-color: var(--yellow) !important;
+}
+
+/* ============================== Header ============================== */
+.header {
+    background: rgb(0 0 0 / 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__avatar {
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.header__avatar img {
+    height: 50px;
+}
+
+.header__bet,
+.header__money {
+    font-size: 16px;
+    padding: 16px;
+}
+
+/* ============================== Figure ============================== */
+.figure {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figure__item {
+    width: calc(100% /3);
+    padding: 8px;
+}
+
+.figure__item--group {
+    position: relative;
+    background-color: #DCE6CB;
+    border: 4px solid var(--primary);
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.figure__item--group img {
+    width: 100%;
+}
+
+.figure__item--group label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0 0 0 / 0.7);
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.figure--small {
+    padding-top: 8px;
+    width: 300px;
+}
+
+.figure--small .figure__item--group {
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+}
+
+/* ============================== Play ============================== */
+.play {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn__start {
+    background-color: var(--primary);
+    color: #fff;
+}
