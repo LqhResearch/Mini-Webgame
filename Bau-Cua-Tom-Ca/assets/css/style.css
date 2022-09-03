@@ -10,7 +10,7 @@
 }
 
 body {
-    background: center / cover no-repeat url("/assets/img/background.jpg");
+    background: center / cover no-repeat url("../img/background.jpg");
 }
 
 main {

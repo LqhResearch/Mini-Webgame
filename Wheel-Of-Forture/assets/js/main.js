@@ -3,42 +3,42 @@ const listGift = [
     {
         name: 'Bút bi',
         percent: 15 / 100,
-        image: 'assets/img/product-1.png',
+        image: './assets/img/product-1.png',
     },
     {
         name: 'Sổ tay',
         percent: 15 / 100,
-        image: 'assets/img/product-2.png',
+        image: './assets/img/product-2.png',
     },
     {
         name: 'Ba lô',
         percent: 10 / 100,
-        image: 'assets/img/product-3.png',
+        image: './assets/img/product-3.png',
     },
     {
         name: 'Nón bảo hiểm',
         percent: 10 / 100,
-        image: 'assets/img/product-4.png',
+        image: './assets/img/product-4.png',
     },
     {
         name: 'Bút bi',
         percent: 15 / 100,
-        image: 'assets/img/product-1.png',
+        image: './assets/img/product-1.png',
     },
     {
         name: 'Sổ tay',
         percent: 15 / 100,
-        image: 'assets/img/product-2.png',
+        image: './assets/img/product-2.png',
     },
     {
         name: 'Ba lô',
         percent: 10 / 100,
-        image: 'assets/img/product-3.png',
+        image: './assets/img/product-3.png',
     },
     {
         name: 'Nón bảo hiểm',
         percent: 10 / 100,
-        image: 'assets/img/product-4.png',
+        image: './assets/img/product-4.png',
     },
 ];
 
