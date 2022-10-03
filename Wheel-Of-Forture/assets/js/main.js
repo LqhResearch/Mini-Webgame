@@ -62,7 +62,7 @@ const listGift = [
 
             itemGift.innerHTML = `
                 <p class="text-item" style="
-                    background-color: ${colors[index]};
+                    background-color: ${colors[index % colors.length]};
                     transform: skewY(${skewY}deg) rotate(${rotate / 2}deg);
                 ">
                     <b>${item.name}</b>

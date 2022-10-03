@@ -1,0 +1,132 @@
+:root {
+    --blue: #0096FF;
+    --green: #3FA796;
+    --card-column: 4;
+    --card-width: 720px;
+    --card-height: calc(var(--card-width) / var(--card-column) * 1.3);
+    --background-main: url("../img/background-main.png");
+    --background-card-back: url("../img/card-img.png")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: center / cover no-repeat var(--background-main);
+}
+
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__title {
+    margin: 8px;
+    text-align: center;
+}
+
+.group__box {
+    width: var(--card-width);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    flex: 0 0 calc(100% / var(--card-column));
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.8s;
+}
+
+.card__visible {
+    transform: rotateY(360deg);
+}
+
+.card__visible .card__back {
+    display: none;
+}
+
+.card:not(.card__visible) .card__front {
+    display: none;
+}
+
+.card__front,
+.card__back {
+    position: relative;
+    width: auto;
+    height: var(--card-height);
+    padding: 16px;
+    margin: 8px;
+    border: 2px solid var(--blue);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.card__front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card__gift--name {
+    font-weight: bold;
+    margin: 8px;
+    text-align: center;
+    z-index: 2;
+}
+
+.card__gift--img {
+    width: 100%;
+    z-index: 2;
+}
+
+.card__back {
+    background: center / cover no-repeat var(--background-card-back);
+}
+
+.btn {
+    width: 100%;
+    line-height: inherit;
+    background-color: #fff;
+    font-size: inherit;
+    margin: 16px;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn.btn__hide {
+    display: none;
+}
+
+#btn--start {
+    width: auto;
+    background-color: var(--green);
+    color: #fff;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+}
+
+#btn--start:hover {
+    background-color: #fff;
+    color: var(--green);
+    font-weight: bold;
+}
