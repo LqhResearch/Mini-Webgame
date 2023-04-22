@@ -1,10 +1,8 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
 const btnStart = $(".btn__start");
 const dicesItem = $$(".figure:not(.figure--small) .figure__item");
 const dices = $$(".figure--small .figure__item");
-
 var figures = [
     {
         index: 0,
@@ -43,14 +41,12 @@ var figures = [
         coin: 0,
     },
 ];
-
 // Khởi tạo trò chơi
 var user = {
     avatar: './assets/img/user.png',
     coin: 10,
     betTable: 2
 }
-
 function updateData() {
     var headerAvatar = $('.header__avatar img');
     var headerBet = $('.header__bet');
@@ -58,24 +54,19 @@ function updateData() {
     headerAvatar.src = user.avatar;
     headerBet.innerHTML = 'Bàn cược: ' + user.betTable + ' đ';
     headerMoney.innerHTML = 'Tiền: ' + user.coin + ' đ';
-
     dicesItem.forEach((e, index) => {
         var img = e.querySelector('.figure__item--group img');
         var labelCoin = e.querySelector('.figure__item--group label');
-
         img.src = figures[index].image;
         labelCoin.innerHTML = figures[index].coin;
     });
 }
-
 updateData();
-
 // Lấy ngẫu nhiên một phần tử trong danh sách figures theo tỉ lệ
 var randomFigure = () => {
     var value = Math.random() * 100;
     var sum = 0;
     var element;
-
     for (var i = 0; i < figures.length; i++) {
         sum += figures[i].percent;
         if (sum > value) {
@@ -85,7 +76,6 @@ var randomFigure = () => {
     }
     return element;
 }
-
 // Xử lý lắc xúc sắc
 btnStart.onclick = () => {
     // Kiểm tra người chơi đã đặt cược chưa?
@@ -95,10 +85,8 @@ btnStart.onclick = () => {
             flag = true;
             break;
         }
-
     if (!flag)
         return;
-
     var wins = [];
     var t = 0;
     var timer = setInterval(() => {
@@ -114,7 +102,6 @@ btnStart.onclick = () => {
         }
     }, 100);
 }
-
 // Đặt tiền
 dicesItem.forEach((e) => {
     e.onclick = (e) => {
@@ -126,7 +113,6 @@ dicesItem.forEach((e) => {
         }
     }
 })
-
 // Xử lý thắng thua
 function winOfLose(wins) {
     var winCoin = 0;
@@ -137,11 +123,9 @@ function winOfLose(wins) {
             }
         }
     }
-
     for (var j = 0; j < figures.length; j++) {
         figures[j].coin = 0;
     }
-
     user.coin += winCoin;
     updateData();
     if (winCoin > 0)

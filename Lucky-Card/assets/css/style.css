@@ -1,11 +1,12 @@
 :root {
     --blue: #0096FF;
     --green: #3FA796;
+    --white: #FFFFFF;
     --card-column: 4;
     --card-width: 720px;
     --card-height: calc(var(--card-width) / var(--card-column) * 1.3);
     --background-main: url("../img/background-main.png");
-    --background-card-back: url("../img/card-img.png")
+    --background-card-back: url("../img/card-img.png");
 }
 
 * {
@@ -31,7 +32,7 @@ body {
 }
 
 .header__title {
-    margin: 8px;
+    padding: 16px;
     text-align: center;
 }
 
@@ -75,7 +76,7 @@ body {
 }
 
 .card__front {
-    background-color: #fff;
+    background-color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +102,7 @@ body {
 .btn {
     width: 100%;
     line-height: inherit;
-    background-color: #fff;
+    background-color: var(--white);
     font-size: inherit;
     margin: 16px;
     padding: 8px 16px;
@@ -120,13 +121,27 @@ body {
 #btn--start {
     width: auto;
     background-color: var(--green);
-    color: #fff;
+    color: var(--white);
     border: 2px solid var(--green);
     border-radius: 8px;
 }
 
 #btn--start:hover {
-    background-color: #fff;
+    background-color: var(--white);
     color: var(--green);
     font-weight: bold;
+}
+
+/* For tablet */
+@media screen and (max-width: 767.98px) {
+    :root {
+        --card-column: 3;
+    }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+    :root {
+        --card-column: 2;
+    }
 }

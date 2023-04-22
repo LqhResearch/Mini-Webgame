@@ -1,8 +1,8 @@
 :root {
     --size: 500px;
     --timer: 7s;
+    --border-color-1: linear-gradient(#FFFFFF, #FFFFFF);
     --border-color-2: linear-gradient(#029454, #029454);
-    --border-color-1: linear-gradient(#fff, #fff);
 }
 
 * {
@@ -67,7 +67,7 @@ main {
 }
 
 .spin-btn {
-    background-color: rgba(214, 28, 78, 0.8);
+    background-color: #d61c4ecc;
     color: #fff;
     padding: 1rem 2rem;
     margin-top: 2rem;
@@ -108,10 +108,4 @@ li {
 
 .msg {
     margin-top: 2rem;
-}
-
-@media screen and (max-width: 600px) {
-    :root {
-        --size: 350px;
-    }
 }

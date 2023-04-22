@@ -1,6 +1,7 @@
 :root {
     --primary: #0096FF;
     --yellow: #FBDF07;
+    --white: #FFFFFF;
 }
 
 * {
@@ -26,7 +27,7 @@ main {
 /* ============================== Header ============================== */
 .header {
     background: rgb(0 0 0 / 0.7);
-    color: #fff;
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,7 +51,7 @@ main {
 
 /* ============================== Figure ============================== */
 .figure {
-    width: 600px;
+    max-width: 600px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +80,7 @@ main {
     left: 0;
     right: 0;
     background: rgb(0 0 0 / 0.7);
-    color: #fff;
+    color: var(--white);
     border-radius: 12px;
     text-align: center;
 }
@@ -90,7 +91,7 @@ main {
 }
 
 .figure--small .figure__item--group {
-    background-color: #fff;
+    background-color: var(--white);
     border: none;
     border-radius: 0px;
 }
@@ -119,5 +120,5 @@ main {
 
 .btn__start {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--white);
 }

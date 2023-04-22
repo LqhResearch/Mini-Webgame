@@ -41,25 +41,20 @@ const listGift = [
         image: './assets/img/product-4.png',
     },
 ];
-
 (() => {
     const $ = document.querySelector.bind(document);
     const wheel = $('.wheel');
     const btnSpin = $('.spin-btn');
-
     let timer = 7000; // Thời gian cho mỗi lần quay
     let isRotating = false; // Đang quay hay không?
     let currentRotate = 0;
-
     const giftSize = listGift.length;
     const rotate = 360 / giftSize;
     const skewY = 90 - rotate; // Độ nghiêng của 1 item
-
     const renderGift = () => {
         listGift.forEach((item, index) => {
             const itemGift = document.createElement('li');
             itemGift.style.transform = `rotate(${rotate * index}deg) skewY(-${skewY}deg)`;
-
             itemGift.innerHTML = `
                 <p class="text-item" style="
                     background-color: ${colors[index % colors.length]};
@@ -77,15 +72,12 @@ const listGift = [
             wheel.appendChild(itemGift);
         })
     }
-
     const rotateWheel = (currentRotate, index) => {
         wheel.style.transform = `rotate(${currentRotate - index * rotate - rotate / 2}deg)`;
     }
-
     const getGift = (randomNumber) => {
         let currentPercent = 0;
         let list = [];
-
         listGift.forEach((item, index) => {
             currentPercent += item.percent;
             randomNumber <= currentPercent && list.push({
@@ -94,7 +86,6 @@ const listGift = [
         });
         return list[0];
     }
-
     const showGift = (gift) => {
         setTimeout(() => {
             isRotating = false;
@@ -105,19 +96,20 @@ const listGift = [
             })
         }, timer);
     }
-
     const spinner = () => {
         isRotating = true;
-
         const gift = getGift(Math.random());
         currentRotate += 360 * 10;
         rotateWheel(currentRotate, gift.index);
         showGift(gift);
     }
-
     btnSpin.addEventListener('click', () => {
         !isRotating && spinner();
     });
-
     renderGift();
 })();
+function resize() {
+    var width = $(window).width();
+    document.documentElement.style.setProperty('--size', width > 600 ? "500px" : (width / 1.1 - 32) + "px");
+}
+resize();

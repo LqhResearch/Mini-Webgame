@@ -35,12 +35,9 @@ const giftList = [
         'percent': 20,
     },
 ]
-
 const groupBox = $('.group__box')[0];
 const btnStart = $('#btn--start')[0];
-
 var isPlay = false;
-
 // Khởi tạo giá trị
 giftList.forEach((e) => {
     var card = document.createElement('div');
@@ -55,22 +52,18 @@ giftList.forEach((e) => {
             const item = getGift(Math.random() * 100);
             this.querySelector('.card__gift--name').innerHTML = item.name;
             this.querySelector('.card__gift--img').src = item.image;
-
             Swal.fire({
                 title: item.name,
                 imageUrl: item.image,
                 imageHeight: 200,
             });
-
             this.classList.add('card__visible');
             isPlay = false;
             btnStart.classList.toggle('btn__hide');
         }
     }
-
     groupBox.appendChild(card);
 });
-
 btnStart.onclick = function () {
     const cardList = $('.card');
     for (i = 0; i < cardList.length; i++) {
@@ -79,12 +72,10 @@ btnStart.onclick = function () {
     isPlay = true;
     btnStart.classList.toggle('btn__hide');
 }
-
 // Lấy quà
 const getGift = (randomNumber) => {
     let currentPercent = 0;
     let list = [];
-
     giftList.forEach((item, index) => {
         currentPercent += item.percent;
         randomNumber <= currentPercent && list.push({
@@ -93,3 +84,8 @@ const getGift = (randomNumber) => {
     });
     return list[0];
 }
+function resize() {
+    var width = $(window).width();
+    document.documentElement.style.setProperty('--card-width', width > 720 ? "720px" : width + "px");
+}
+resize();
